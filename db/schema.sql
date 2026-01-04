@@ -64,3 +64,17 @@ CREATE TABLE IF NOT EXISTS statements_annual (
 
 CREATE INDEX IF NOT EXISTS idx_facts_cik_tag_end ON facts (cik, tag, period_end);
 CREATE INDEX IF NOT EXISTS idx_filings_cik_date ON filings (cik, filing_date);
+
+CREATE TABLE IF NOT EXISTS ratios_annual (
+  cik TEXT NOT NULL REFERENCES companies(cik),
+  fiscal_year INT NOT NULL,
+  gross_margin DOUBLE PRECISION,
+  operating_margin DOUBLE PRECISION,
+  net_margin DOUBLE PRECISION,
+  roa DOUBLE PRECISION,
+  roe DOUBLE PRECISION,
+  leverage DOUBLE PRECISION,
+  fcf_margin DOUBLE PRECISION,
+  asset_turnover DOUBLE PRECISION,
+  PRIMARY KEY (cik, fiscal_year)
+);
