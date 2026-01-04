@@ -9,15 +9,25 @@ from sec_xbrl_finwarehouse.sec_client import SecClient
 
 # Minimal set of statement tags for V1 (enough for later ratios)
 CORE_TAGS = {
+    # Revenues (candidates)
     "Revenues",
+    "SalesRevenueNet",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "TotalRevenues",
+
+    # Profitability
     "GrossProfit",
     "OperatingIncomeLoss",
     "NetIncomeLoss",
+
+    # Balance sheet
     "Assets",
     "Liabilities",
     "StockholdersEquity",
+
+    # Cash flow
     "NetCashProvidedByUsedInOperatingActivities",
-    "PaymentsToAcquirePropertyPlantAndEquipment",  # CAPEX proxy
+    "PaymentsToAcquirePropertyPlantAndEquipment",
 }
 
 FilingRow = Tuple[str, str, Optional[str], Optional[date], Optional[date], Optional[int], Optional[str]]
