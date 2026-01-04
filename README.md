@@ -11,6 +11,8 @@ Pipeline (V1):
 
 This project is intentionally small but end-to-end: ingestion → storage → transformation → analytics → API.
 
+![FastAPI docs](assets/api_screenshot.png)
+
 ---
 
 ## Tech stack
@@ -166,9 +168,3 @@ src/sec_xbrl_finwarehouse/
 * Store a broader statement schema and calculate more ratios (ROIC, debt ratios, growth rates)
 * Streamlit dashboard consuming the API
 * Caching + retries + stricter SEC fair-access throttling
-
----
-
-git add README.md db/schema.sql
-git commit -m "Add README with setup and usage"
-git push
